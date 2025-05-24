@@ -89,6 +89,20 @@
       "type": "women"
     }
   ],
-  "basket": [],
+  "basket": [
+    {
+      "id": "5850",
+      "title": "Boys' Pink Anime-Inspired Hoodie",
+      "price": 20,
+      "type": "kids",
+      "img": [
+        "/item5.png",
+        "/item5.png",
+        "/item5.png"
+      ],
+      "productId": "5",
+      "count": 1
+    }
+  ],
   "order": []
 }

@@ -15,19 +15,19 @@ export const useBasket = () => {
 
         if (isToBasket(product.id)) return;
         const { id, title, price, type, img } = product;
-
-        await axiosInstance.post(ApiRoutes.BASKET, {
+        const objProduct = {
             title,
             price,
             type,
             img,
             productId: id,
             count: 1
-        })
+        }
+        await axiosInstance.post(ApiRoutes.BASKET, objProduct)
 
 
 
-        mutate([...data, product])
+        mutate([...data, objProduct])
     }
 
     const removeProduct = async (id) => {

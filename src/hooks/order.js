@@ -8,6 +8,11 @@ export const useOrder = () => {
     const { data: products, mutate, error, isLoading } = useSWR(ApiRoutes.ORDER, fetcher)
     const data = products?.length > 0 ? products : [];
     const { clearProducts } = useBasket()
+    const newData = data.reduce((acc, el) => {
+        acc.push(Object.values(el));
+        return acc;
+    }, []).flat().filter((el) => el.id)
+
 
 
     const addToOrder = async (products) => {
@@ -22,7 +27,7 @@ export const useOrder = () => {
 
     return {
         addToOrder,
-        data,
+        data: newData,
         error,
         isLoading
     }
